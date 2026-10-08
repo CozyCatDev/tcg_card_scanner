@@ -27,4 +27,9 @@ The ESP32-CAM takes 160x120px images, then Normalized Cross-Correlation (NCC) is
 - [x] Detected card ID and associated card data can be retrieved from SD card memory.
 - [x] Card data is displayed on TFT display.
 - [ ] Card data in SD card is updated weekly using HTTP requests.
+- [ ] Compile TinyML model from Edge Impulse onto ESP32-CAM and create ablation study with current method.
 - [ ] Circuit fits into 3D printed enclosure.
+
+# Bugs
+- [ ] Most characters are correctly recognized but some letter patterns appear within other letters, e.g. "1" inside "T", "6" inside "8".
+    - Temporary solution - Add hard-coded padding around templates (padding pixels take min. value of template) which penalizes NCC score when letter patterns are detected within other letters.
